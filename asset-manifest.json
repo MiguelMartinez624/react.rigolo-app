@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react.rigolo-app/static/css/main.a7c060f8.chunk.css",
+    "main.js": "/react.rigolo-app/static/js/main.94e376ac.chunk.js",
+    "main.js.map": "/react.rigolo-app/static/js/main.94e376ac.chunk.js.map",
+    "runtime-main.js": "/react.rigolo-app/static/js/runtime-main.c70edc69.js",
+    "runtime-main.js.map": "/react.rigolo-app/static/js/runtime-main.c70edc69.js.map",
+    "static/js/2.4f906937.chunk.js": "/react.rigolo-app/static/js/2.4f906937.chunk.js",
+    "static/js/2.4f906937.chunk.js.map": "/react.rigolo-app/static/js/2.4f906937.chunk.js.map",
+    "static/js/3.31cb5532.chunk.js": "/react.rigolo-app/static/js/3.31cb5532.chunk.js",
+    "static/js/3.31cb5532.chunk.js.map": "/react.rigolo-app/static/js/3.31cb5532.chunk.js.map",
+    "index.html": "/react.rigolo-app/index.html",
+    "static/css/main.a7c060f8.chunk.css.map": "/react.rigolo-app/static/css/main.a7c060f8.chunk.css.map",
+    "static/js/2.4f906937.chunk.js.LICENSE.txt": "/react.rigolo-app/static/js/2.4f906937.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c70edc69.js",
+    "static/js/2.4f906937.chunk.js",
+    "static/css/main.a7c060f8.chunk.css",
+    "static/js/main.94e376ac.chunk.js"
+  ]
+}
