@@ -4,7 +4,7 @@ import React from "react";
 export interface ResponsiveBoxProps {
     sizes: {
         desktopSize: number
-        mobileSize: number;
+        mobileSize?: number;
     }
 
 
@@ -15,7 +15,7 @@ export interface ResponsiveBoxProps {
 
 export const ResponsiveBox: React.FC<ResponsiveBoxProps> = ({children, mobile,desktop, sizes}) => {
     const {width} = useWindowSize();
-    const {mobileSize, desktopSize} = sizes;
+    const {desktopSize} = sizes;
     return (
         <>
             {width < desktopSize && mobile}

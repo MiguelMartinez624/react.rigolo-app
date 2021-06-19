@@ -2,11 +2,20 @@ import React from "react";
 
 
 export interface TextProps {
-    variant :'paragraph'
+    variant: 'paragraph' | 'title'
 }
-export const Text :React.FC<TextProps> = ({variant,children})=>{
+
+const variantStyles: any = {
+    'paragraph': {fontSize: 16},
+    'title': {fontSize: 25, fontWeight: 'bold',textAlign:'center'},
+}
+
+
+export const Text: React.FC<TextProps> = ({variant, children}) => {
+
+    const mergedStyles = {color: "white", ...variantStyles[variant]}
     return (
-        <span >{children}</span>
+        <span style={mergedStyles}>{children}</span>
     )
 
 }

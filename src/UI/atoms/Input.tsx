@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 const inputStyle = {
     fontSize: '14px',
@@ -8,6 +8,7 @@ const inputStyle = {
     border: 'none',
     height: '26px',
     outline: 'none',
+    color: 'white'
 
 }
 const inputContainerStyle: any = {
@@ -61,16 +62,29 @@ export const Input: React.FC<InputProps> =
          onValueChange
      }) => {
         const [value, setValue] = React.useState<any>(initialValue || "");
+        const [hasFocus, setFocus] = React.useState(false);
+        const inputRef = React.useRef<HTMLInputElement>(null);
+
         const handleInputChange = (ev: any) => {
             setValue(ev.target.value);
             if (onValueChange) {
                 onValueChange(value);
             }
         }
+
+        useEffect(() => {
+            if (document.hasFocus() && inputRef?.current?.contains(document.activeElement)) {
+                setFocus(true);
+            }
+        }, []);
+
         return (
             <div style={inputContainerStyle}>
-                <input style={inputStyle} onChange={handleInputChange} value={value} type={type}/>
-                <label style={!(value) ? labelStyle : floatingLabel}>{placeholder}</label>
+                <input ref={inputRef}
+                       onFocus={() => setFocus(true)}
+                       onBlur={() => setFocus(false)}
+                       style={inputStyle} onChange={handleInputChange} value={value} type={type}/>
+                <label style={(!(value)) && !hasFocus ? labelStyle : floatingLabel}>{placeholder}</label>
             </div>
         )
 
