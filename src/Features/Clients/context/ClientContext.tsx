@@ -3,7 +3,7 @@ import {Result} from "../../../Common/types";
 import React from "react";
 
 export interface ClientContextActions {
-    submitNewClient: (newClient: NewClient) => Promise<Result<boolean>>;
+    submitNewClient: (newClient: NewClient) => Promise<Result<string>>;
 }
 
 export interface ClientContextData {

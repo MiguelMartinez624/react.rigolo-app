@@ -3,6 +3,7 @@ import {Icon} from "../atoms/Icon";
 import {DynamicForm} from "../molecules/DynamicForm";
 import {Button} from "../atoms/Button";
 import {InputProps} from "../atoms/Input";
+import {NewClient} from "../../Features/Clients/context/models";
 
 
 const newClientFields: { objKey: string, config: InputProps }[] = [
@@ -13,7 +14,7 @@ const newClientFields: { objKey: string, config: InputProps }[] = [
 ]
 
 export interface NewClientFormProps {
-    submitHandler: () => void
+    submitHandler: (newClientData: NewClient) => void
 }
 
 export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => {
@@ -22,7 +23,18 @@ export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => 
         position: 'relative', height: '100%'
     }}>
         <Icon name={'brand'}/>
-        <DynamicForm fields={newClientFields}/>
-        <Button style={{position: 'absolute', bottom: 30}} onClick={submitHandler} label={'Enviar'}/>
+        <DynamicForm
+            fields={newClientFields}
+            actionsTemplate={(values: any) => (
+                <Button
+                    style={{position: 'absolute', bottom: 30}}
+                    onClick={
+                        () => {
+                            submitHandler(values as NewClient);
+                        }
+                    } label={'Enviar'}/>
+            )}
+        />
+
     </div>)
 }

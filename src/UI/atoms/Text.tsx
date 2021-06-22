@@ -2,7 +2,8 @@ import React from "react";
 
 
 export interface TextProps {
-    variant: 'paragraph' | 'title'
+    variant: 'paragraph' | 'title',
+
 }
 
 const variantStyles: any = {
