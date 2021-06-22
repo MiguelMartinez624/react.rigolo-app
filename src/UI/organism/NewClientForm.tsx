@@ -23,7 +23,9 @@ export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => 
         position: 'relative', height: '100%'
     }}>
         <Icon name={'brand'}/>
+        <div style={{height:30}}></div>
         <DynamicForm
+
             fields={newClientFields}
             actionsTemplate={(values: any) => (
                 <Button
