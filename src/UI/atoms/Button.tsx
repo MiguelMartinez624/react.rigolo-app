@@ -11,7 +11,7 @@ const buttonStyle: any = {
     fontSize: 'inherit',
     justifyContent: 'center',
     cursor: 'pointer',
-    background: 'blue',
+    background: '#fbaa2c',
     color: 'white',
 }
 

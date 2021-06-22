@@ -19,7 +19,7 @@ export const Icon: React.FC<IconProps> =
      }) => {
         switch (name) {
             case "brand":
-                return <img height={150} src={process.env.PUBLIC_URL + '/brand.png'}/>
+                return <img height={150} src={process.env.PUBLIC_URL + '/rigolo-icon.png'}/>
             case 'instagram':
                 return <FaInstagram style={iconsStyle[iconSize]}/>
             case 'whatsapp':

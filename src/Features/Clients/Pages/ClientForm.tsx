@@ -27,8 +27,8 @@ export const ClientFormPage: React.FC<ClientFormPageProps> = () => {
             sizes={{desktopSize: 600}}
             mobile={
                 <Card style={{width: '90%', height: '90%'}}>
-                    {/*<NewClientForm  submitHandler={submitHandler}/>*/}
-                    <ContactInfo/>
+                    <NewClientForm  submitHandler={submitHandler}/>
+                    {/*<ContactInfo/>*/}
                 </Card>
 
             }
