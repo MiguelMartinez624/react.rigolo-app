@@ -12,10 +12,10 @@ export async function createClient(newClient: NewClient): Promise<Result<string>
             return await raw.json();
         }
 
-        return {error: new Error("api communication error"), data: null}
+        return {error: {code: '', msg: 'Communication error', data: null}, data: null}
 
     } catch (e) {
         console.log(e)
-        return {data: null, error: e.toString()}
+        return {data: null, error: {code: '', msg: 'Communication error', data: e}}
     }
 }

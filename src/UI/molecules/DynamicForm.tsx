@@ -27,6 +27,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = (
                 key={objKey}
                 onValueChange={(newValue) => {
                     value[objKey] = newValue
+                    console.log(newValue)
                     setValue({...value});
                 }}
                 placeholder={config.placeholder}

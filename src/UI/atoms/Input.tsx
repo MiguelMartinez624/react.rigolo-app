@@ -68,7 +68,7 @@ export const Input: React.FC<InputProps> =
         const handleInputChange = (ev: any) => {
             setValue(ev.target.value);
             if (onValueChange) {
-                onValueChange(value);
+                onValueChange(ev.target.value);
             }
         }
 
@@ -83,7 +83,9 @@ export const Input: React.FC<InputProps> =
                 <input ref={inputRef}
                        onFocus={() => setFocus(true)}
                        onBlur={() => setFocus(false)}
-                       style={inputStyle} onChange={handleInputChange} value={value} type={type}/>
+                       style={inputStyle}
+                       onChange={handleInputChange}
+                       value={value} type={type}/>
                 <label style={(!(value)) && !hasFocus ? labelStyle : floatingLabel}>{placeholder}</label>
             </div>
         )

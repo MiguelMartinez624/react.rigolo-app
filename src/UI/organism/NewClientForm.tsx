@@ -10,7 +10,7 @@ const newClientFields: { objKey: string, config: InputProps }[] = [
     {objKey: 'name', config: {placeholder: 'Nombre'}},
     {objKey: 'phone', config: {placeholder: 'Telefono'}},
     {objKey: 'region', config: {placeholder: 'Region'}},
-    {objKey: 'Email', config: {placeholder: 'Email'}},
+    {objKey: 'email', config: {placeholder: 'Email'}},
 ]
 
 export interface NewClientFormProps {
@@ -25,17 +25,18 @@ export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => 
         <Icon name={'brand'}/>
         <div style={{height:30}}></div>
         <DynamicForm
-
             fields={newClientFields}
-            actionsTemplate={(values: any) => (
-                <Button
-                    style={{position: 'absolute', bottom: 30}}
-                    onClick={
-                        () => {
-                            submitHandler(values as NewClient);
-                        }
-                    } label={'Enviar'}/>
-            )}
+            actionsTemplate={(values: any) => {
+                return (
+                    <Button
+                        style={{position: 'absolute', bottom: 30}}
+                        onClick={
+                            () => {
+                                submitHandler(values as NewClient);
+                            }
+                        } label={'Enviar'}/>
+                )
+            }}
         />
 
     </div>)

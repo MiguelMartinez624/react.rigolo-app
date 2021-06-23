@@ -7,9 +7,14 @@ import {NewClientForm} from "../../../UI/organism/NewClientForm";
 import {NewClient} from "../context/models";
 import {Text} from "../../../UI/atoms/Text";
 import {Button} from "../../../UI/atoms/Button";
+import {APIError} from "../../../Common/types";
 
-
-export const ErrorMessagePage: React.FC<{ err: any, onGoBack: () => void }> = ({err, onGoBack}) => {
+const MESSAGES: { [p:string]:string } ={
+    'name': 'El nombre es requerido para el registro',
+    'email': 'El email es requerido para el registro',
+    'phone': 'El numero de telefono  es requerido para el registro'
+}
+export const ErrorMessagePage: React.FC<{ err: APIError, onGoBack: () => void }> = ({err, onGoBack}) => {
     return (
         <div style={{
             display: "flex",
@@ -18,7 +23,7 @@ export const ErrorMessagePage: React.FC<{ err: any, onGoBack: () => void }> = ({
             flexDirection: 'column',
             height: '100%'
         }}>
-            <Text variant={"title"}> {err?.msg}</Text>
+            <Text variant={"title"}> {MESSAGES[err?.data?.field] || "UN error inexperado ocurrio!"}</Text>
             <Button onClick={onGoBack} style={{marginTop: 40}} label={"Volver"}/>
         </div>
     )
@@ -45,7 +50,7 @@ export interface ClientFormPageProps {
 
 export const ClientFormPage: React.FC<ClientFormPageProps> = () => {
     const {submitNewClient} = React.useContext(ClientsContext);
-    const [err, setError] = React.useState<any | null>(null)
+    const [err, setError] = React.useState<APIError | null>(null)
     const [isSuccess, setSuccess] = React.useState<boolean>(false)
 
     const submitHandler = (data: NewClient) => {
