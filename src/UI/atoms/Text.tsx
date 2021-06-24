@@ -2,13 +2,14 @@ import React from "react";
 
 
 export interface TextProps {
-    variant: 'paragraph' | 'title',
+    variant: 'paragraph' | 'title' | 'hint',
 
 }
 
 const variantStyles: any = {
     'paragraph': {fontSize: 16},
-    'title': {fontSize: 25, fontWeight: 'bold',textAlign:'center'},
+    'title': {fontSize: 25, fontWeight: 'bold', textAlign: 'center'},
+    'hint': {fontSize: 14, fontWeight: 'bold', fontStyle: 'italic'},
 }
 
 

@@ -9,7 +9,7 @@ import {Text} from "../../../UI/atoms/Text";
 import {Button} from "../../../UI/atoms/Button";
 import {APIError} from "../../../Common/types";
 
-const MESSAGES: { [p:string]:string } ={
+const MESSAGES: { [p: string]: string } = {
     'name': 'El nombre es requerido para el registro',
     'email': 'El email es requerido para el registro',
     'phone': 'El numero de telefono  es requerido para el registro'
@@ -29,7 +29,7 @@ export const ErrorMessagePage: React.FC<{ err: APIError, onGoBack: () => void }>
     )
 }
 
-export const SuccessMessagePage: React.FC<{  onGoBack: () => void }> = ({ onGoBack}) => {
+export const SuccessMessagePage: React.FC<{ onGoBack: () => void }> = ({onGoBack}) => {
     return (
         <div style={{
             display: "flex",
@@ -74,7 +74,7 @@ export const ClientFormPage: React.FC<ClientFormPageProps> = () => {
                     {err && <ErrorMessagePage err={err} onGoBack={() => {
                         setError(null);
                     }}/>}
-                    {isSuccess && <SuccessMessagePage  onGoBack={() => {
+                    {isSuccess && <SuccessMessagePage onGoBack={() => {
                         setSuccess(false);
                     }}/>}
                 </Card>
@@ -82,6 +82,7 @@ export const ClientFormPage: React.FC<ClientFormPageProps> = () => {
             }
             desktop={
                 <Card style={{width: '30%', height: '50%'}}>
+                    <Text variant={"title"}> Esta no es una app para ordenador!!</Text>
                     <NewClientForm submitHandler={submitHandler}/>
                 </Card>
             }

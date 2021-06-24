@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import {Input, InputProps} from "../atoms/Input";
+import {Input, InputProps} from "../atoms/Forms/Input";
 
 
 type RenderInputFunc = (config: { objKey: string, config: InputProps }) => React.ReactNode;
-type FieldValidatorFunc = (value: string) => { valid: boolean, message?: string };
 
 export interface DynamicFormProps {
-    fields: { objKey: string, config: InputProps, validators?: FieldValidatorFunc[] }[]
+    fields: { objKey: string, config: InputProps}[]
     initialValue?: any
     actionsTemplate?: (values: any) => React.ReactNode
 }
@@ -30,7 +29,8 @@ export const DynamicForm: React.FC<DynamicFormProps> = (
                     console.log(newValue)
                     setValue({...value});
                 }}
-                placeholder={config.placeholder}
+                {...config}
+
             />
         )
     }
