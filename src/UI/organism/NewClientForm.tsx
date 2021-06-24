@@ -19,8 +19,7 @@ export interface NewClientFormProps {
 
 export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => {
     return (<div style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center',
-        position: 'relative', height: '100%'
+        display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%'
     }}>
         <Icon name={'brand'}/>
         <div style={{height:30}}></div>
@@ -28,9 +27,7 @@ export const NewClientForm: React.FC<NewClientFormProps> = ({submitHandler}) => 
             fields={newClientFields}
             actionsTemplate={(values: any) => {
                 return (
-                    <Button
-                        style={{position: 'absolute', bottom: 30}}
-                        onClick={
+                    <Button onClick={
                             () => {
                                 submitHandler(values as NewClient);
                             }

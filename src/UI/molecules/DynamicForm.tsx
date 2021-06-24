@@ -38,7 +38,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = (
     return (
         <>
             {fields.map(renderField)}
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%', marginTop: '26vh'}}>
                 {actionsTemplate ? actionsTemplate(value) : null}
             </div>
         </>
